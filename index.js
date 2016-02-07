@@ -1,4 +1,5 @@
 var express = require('express');
+var io = require('socket.io');
 var app = express();
 
 var port =  process.env.PORT || 80;
@@ -7,11 +8,13 @@ var port =  process.env.PORT || 80;
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  //res.send('Hello World!');
+  res.sendfile(__dirname + '/public/index.html')
 });
 
 app.post('/', function (req, res) {
-  res.send('Hello World!');
+  //res.send('Hello World!');
+  res.sendfile(__dirname + '/public/index.html')
 });
 
 
