@@ -2,6 +2,7 @@ var express = require('express');
 var fs = require('fs');
 var app = express();
 var https = require('https');
+var port_http =  process.env.PORT || 80;
 var port =  process.env.PORT || 443;
 //app.set('port', (process.env.PORT || 5000));
 
@@ -24,9 +25,9 @@ app.post('/', function (req, res) {
 });
 
 
-/*var server = app.listen(port, function () {
+app.listen(port_http, function () {
   console.log('Example app listening on port: ' + port);
-});*/
+});
 var server = https.createServer(options, app).listen(port, function () {
   console.log('Example app listening on port: ' + port);
 });
