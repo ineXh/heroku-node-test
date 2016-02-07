@@ -1,8 +1,14 @@
 var express = require('express');
+var fs = require('fs');
 var app = express();
-
+var https = require('https');
 var port =  process.env.PORT || 443;
 //app.set('port', (process.env.PORT || 5000));
+
+const options = {
+  key: fs.readFileSync('cow-key.pem'),
+  cert: fs.readFileSync('cow-cert.pem')
+};
 
 //app.use(express.static(__dirname + '/public'));
 app.use(express.static('public'));
@@ -18,9 +24,13 @@ app.post('/', function (req, res) {
 });
 
 
-var server = app.listen(port, function () {
+/*var server = app.listen(port, function () {
+  console.log('Example app listening on port: ' + port);
+});*/
+var server = https.createServer(options, app).listen(port, function () {
   console.log('Example app listening on port: ' + port);
 });
+
 
 var io = require('socket.io')(server);
 io.on('connection', function (socket) {
