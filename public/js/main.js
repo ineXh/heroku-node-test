@@ -1,5 +1,6 @@
 var Engine = (function(global) {
-	var socket = io();
+	//var socket = io();
+  var socket = io.connect('https://104.197.194.141/');
 
 // Initialize variables
   var $window = $(window);
