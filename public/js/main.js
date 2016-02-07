@@ -1,7 +1,8 @@
 var Engine = (function(global) {
 	//var socket = io();
   //var socket = io.connect('https://104.197.194.141/');
-  var socket = io.connect('https://192.168.0.106/');
+  var socket = io.connect('https://frenzy.supercow.org/');
+  //var socket = io.connect('https://192.168.0.106/');
   
 
 // Initialize variables

@@ -6,8 +6,8 @@ var port =  process.env.PORT || 443;
 //app.set('port', (process.env.PORT || 5000));
 
 const options = {
-  key: fs.readFileSync('cow-key.pem'),
-  cert: fs.readFileSync('cow-cert.pem')
+  key: fs.readFileSync('frenzy-key.pem'),
+  cert: fs.readFileSync('frenzy-cert.pem')
 };
 
 //app.use(express.static(__dirname + '/public'));
