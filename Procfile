@@ -1,1 +1,1 @@
-web: npm start
+web: node index_hero.js
