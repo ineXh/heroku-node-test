@@ -17,9 +17,6 @@ app.post('/', function (req, res) {
 });
 
 
-/*var server = app.listen(port, function () {
-  console.log('Example app listening on port: ' + port);
-});*/
-var server = https.createServer(options, app).listen(port, function () {
+var server = app.listen(port, function () {
   console.log('Example app listening on port: ' + port);
 });
